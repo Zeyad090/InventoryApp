@@ -99,14 +99,7 @@ class ItemDetailFragment : Fragment() {
         findNavController().navigateUp()
     }
 
-    /**
-     * Called when fragment is destroyed.
-     */
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
-
+    //
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val id = navigationArgs.itemId
@@ -116,4 +109,13 @@ class ItemDetailFragment : Fragment() {
             bind(item)
         }
     }
+    /**
+     * Called when fragment is destroyed.
+     */
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+
+
 }

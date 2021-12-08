@@ -55,8 +55,6 @@ private val viewModel :InventoryViewModel by activityViewModels{
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
-
         _binding = FragmentAddItemBinding.inflate(inflater, container, false)
         return binding.root
 
@@ -95,7 +93,7 @@ private fun updateItem(){
     }
 }
 
-    fun addNewItem() {
+    fun addNewItems() {
         if (isEntryValid()) {
             viewModel.addNewItem(
                 binding.itemName.text.toString(),
@@ -116,12 +114,10 @@ private fun updateItem(){
             }
         } else {
             binding.saveAction.setOnClickListener {
-                addNewItem()
+                addNewItems()
             }
         }
-        binding.saveAction.setOnClickListener {
-              addNewItem()
-        }
+
     }
 
     /**
